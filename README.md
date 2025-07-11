@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Car Rental Admin Dashboard (Next.js + TypeScript)
 
-## Getting Started
+### 1. Login Page
+![Login Page](/Screenshot%202025-07-12%20001547.png)
 
-First, run the development server:
+### 2. Dashboard View
+![Dashboard](/Screenshot%202025-07-12%20002321.png)
+
+### 3. Listings Management
+![Listings](/Screenshot%202025-07-12%20002434.png)
+
+A complete admin dashboard built with Next.js, TypeScript, Zod validation and Redux for managing car rental listings with JWT authentication and audit logging.
+
+## Key Features
+
+- 🔐 **JWT Authentication** - Secure admin login/logout
+- 🚗 **Listing Management** - Approve/Reject/Edit car listings
+- 📊 **Redux State Management** - Predictable state with Thunk middleware
+- 📝 **Audit Trail** - Track all admin actions
+- 💅 **Responsive UI** - Built with TailwindCSS
+- 🛠 **Type-Safe** - Full TypeScript support
+
+## Tech Stack
+
+| Category           | Technology               |
+|--------------------|--------------------------|
+| Framework          | Next.js 14 (App Router)  |
+| Language           | TypeScript               |
+| State Management   | Redux Toolkit + Thunk    |
+| Database           | SQLite (via Prisma)      |
+| Authentication     | JWT                      |
+| Styling           | TailwindCSS              |
+| Mock Data          | JSON mock dataset        |
+| Audit Logging      | localStorage             |
+
+## Setup Instructions
+
+### 1. Prerequisites
+
+- Node.js v18+
+- npm or yarn
+- SQLite3
+
+### 2. Installation
 
 ```bash
+# Clone repository
+git clone https://github.com/pankajkandpal99/car-rental.git 
+cd car-rental
+
+# Install dependencies
+npm install
+
+# Setup environment
+cp .env.example .env
+
+3. Configure Environment
+Edit .env:
+JWT_SECRET=your-secure-key-here
+NODE_ENV=development
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+
+Running the Application
+Development Mode:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Production Build:
+npm run build
+npm start
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Deployment
+https://vercel.com/button
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Manual Deployment:
 
-## Learn More
+Push code to GitHub repository
 
-To learn more about Next.js, take a look at the following resources:
+Create new Vercel project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Add environment variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Deploy!
 
-## Deploy on Vercel
+Assessment Requirements Checklist
+    Next.js with TypeScript
+    JWT Authentication
+    SQLite Database
+    Redux State Management
+    Mock Data Integration
+    Audit Logging (localStorage)
+    Paginated Listings Table
+    Approve/Reject/Edit Actions
+    Responsive Design
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Known Limitations
+    Audit logs persist only in browser localStorage
+    Mock data resets on server restart
+    zod form validation implemented

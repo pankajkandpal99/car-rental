@@ -5,6 +5,9 @@ import { getListings } from "@/services/listings.service";
 import { Listing } from "@/types/db-types";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useAppDispatch } from "@/hooks/use-redux";
+import { logout } from "@/store/slices/auth.slice";
+import { LogOut } from "lucide-react";
 
 interface DashboardStats {
   totalListings: number;
@@ -14,6 +17,7 @@ interface DashboardStats {
 }
 
 export default function DashboardPage() {
+  const dispatch = useAppDispatch();
   const {
     user: authUser,
     isAuthenticated,
@@ -60,6 +64,10 @@ export default function DashboardPage() {
     }
   }, [isAuthenticated]);
 
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
   if (isAuthLoading || isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
@@ -88,9 +96,19 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         <div className="mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2">
-            Dashboard
-          </h1>
+          <div className="flex md:flex-row justify-between items-center">
+            <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2">
+              Dashboard
+            </h1>
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-2 px-4 py-2 bg-red-400 hover:bg-red-500 text-white rounded-lg transition-colors shadow-sm"
+            >
+              <LogOut className="w-4 h-4" />
+              <span>Sign Out</span>
+            </button>
+          </div>
+
           <p className="text-slate-600 text-sm sm:text-base">
             Overview of your account and recent activity
           </p>
@@ -298,7 +316,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="text-right">
                       <p className="text-lg font-semibold text-slate-900">
-                       ${listing.price?.toLocaleString()}
+                        ${listing.price?.toLocaleString()}
                       </p>
                       <p className="text-xs text-slate-500">
                         {new Date(listing.createdAt).toLocaleDateString()}
