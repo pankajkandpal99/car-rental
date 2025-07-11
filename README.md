@@ -1,13 +1,15 @@
 # Car Rental Admin Dashboard (Next.js + TypeScript)
 
+## Application Screenshots
+
 ### 1. Login Page
-![Login Page](/Screenshot%202025-07-12%20001547.png)
+<img src="./public/Screenshot%202025-07-12%20001547.png" width="600" alt="Login Page">
 
 ### 2. Dashboard View
-![Dashboard](/Screenshot%202025-07-12%20002321.png)
+<img src="./public/Screenshot%202025-07-12%20002321.png" width="600" alt="Dashboard">
 
 ### 3. Listings Management
-![Listings](/Screenshot%202025-07-12%20002434.png)
+<img src="./public/Screenshot%202025-07-12%20002434.png" width="600" alt="Listings Management">
 
 A complete admin dashboard built with Next.js, TypeScript, Zod validation and Redux for managing car rental listings with JWT authentication and audit logging.
 
@@ -17,19 +19,19 @@ A complete admin dashboard built with Next.js, TypeScript, Zod validation and Re
 - 🚗 **Listing Management** - Approve/Reject/Edit car listings
 - 📊 **Redux State Management** - Predictable state with Thunk middleware
 - 📝 **Audit Trail** - Track all admin actions
-- 💅 **Responsive UI** - Built with TailwindCSS
+- 💅 **Responsive UI** - Built with TailwindCSS and Shadcn
 - 🛠 **Type-Safe** - Full TypeScript support
 
 ## Tech Stack
 
 | Category           | Technology               |
 |--------------------|--------------------------|
-| Framework          | Next.js 14 (App Router)  |
+| Framework          | Next.js 15 (App Router)  |
 | Language           | TypeScript               |
 | State Management   | Redux Toolkit + Thunk    |
-| Database           | SQLite (via Prisma)      |
+| Database           | SQLite                   |
 | Authentication     | JWT                      |
-| Styling           | TailwindCSS              |
+| Styling            | TailwindCSS, ShadCN      |
 | Mock Data          | JSON mock dataset        |
 | Audit Logging      | localStorage             |
 
