@@ -70,18 +70,9 @@ Production Build:
 npm run build
 npm start
 
-Deployment
-https://vercel.com/button
-
-Manual Deployment:
-
 Push code to GitHub repository
 
-Create new Vercel project
-
 Add environment variables
-
-Deploy!
 
 Assessment Requirements Checklist
     Next.js with TypeScript
